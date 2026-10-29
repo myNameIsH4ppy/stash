@@ -20,7 +20,59 @@ func newServer(c *client.Client) *mcp.Server {
 		Description: "List saved notes, optionally only those with a given tag.",
 	}, listNotes(c))
 
+	mcp.AddTool(s, &mcp.Tool{
+		Name:        "add_note",
+		Description: "Save a new note or bookmark. Returns the created note, including its id.",
+	}, addNote(c))
+
+	mcp.AddTool(s, &mcp.Tool{
+		Name:        "get_note",
+		Description: "Fetch one note by id.",
+	}, getNote(c))
+
+	mcp.AddTool(s, &mcp.Tool{
+		Name:        "delete_note",
+		Description: "Permanently delete a note by id.",
+	}, deleteNote(c))
+
 	return s
+}
+
+type addNoteInput struct {
+	Title string   `json:"title" jsonschema:"short title of the note"`
+	URL   string   `json:"url,omitempty" jsonschema:"link the note points at, if any"`
+	Tags  []string `json:"tags,omitempty" jsonschema:"labels used to group and filter notes"`
+}
+
+func addNote(c *client.Client) mcp.ToolHandlerFor[addNoteInput, model.Note] {
+	return func(ctx context.Context, _ *mcp.CallToolRequest, in addNoteInput) (*mcp.CallToolResult, model.Note, error) {
+		n, err := c.CreateNote(ctx, model.NoteInput{Title: in.Title, URL: in.URL, Tags: in.Tags})
+		return nil, n, err
+	}
+}
+
+type noteIDInput struct {
+	ID string `json:"id" jsonschema:"the note's id, as returned by add_note or list_notes"`
+}
+
+func getNote(c *client.Client) mcp.ToolHandlerFor[noteIDInput, model.Note] {
+	return func(ctx context.Context, _ *mcp.CallToolRequest, in noteIDInput) (*mcp.CallToolResult, model.Note, error) {
+		n, err := c.GetNote(ctx, in.ID)
+		return nil, n, err
+	}
+}
+
+type deleteNoteOutput struct {
+	Deleted string `json:"deleted" jsonschema:"id of the note that was deleted"`
+}
+
+func deleteNote(c *client.Client) mcp.ToolHandlerFor[noteIDInput, deleteNoteOutput] {
+	return func(ctx context.Context, _ *mcp.CallToolRequest, in noteIDInput) (*mcp.CallToolResult, deleteNoteOutput, error) {
+		if err := c.DeleteNote(ctx, in.ID); err != nil {
+			return nil, deleteNoteOutput{}, err
+		}
+		return nil, deleteNoteOutput{Deleted: in.ID}, nil
+	}
 }
 
 // The input struct doubles as the tool's schema: the SDK derives the JSON
