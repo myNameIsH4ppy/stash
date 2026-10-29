@@ -1,0 +1,19 @@
+# Build output
+/bin/
+/stash
+/stash-api
+/stash-mcp
+terraform-provider-stash/terraform-provider-stash
+
+# Local data written by the API
+*.json.tmp
+/stash.json
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# OS / editor
+.DS_Store
+.idea/
