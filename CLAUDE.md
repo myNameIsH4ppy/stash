@@ -19,7 +19,9 @@ code, lead with an analogy, build in small working pieces.
 ## Status
 
 - Phase 1 (done): API, `pkg/client`, CLI, README.
-- Later, only when asked: MCP server, Terraform provider, skills, agents. Do not start these
+- Phase 2 (MCP server, done): `cmd/stash-mcp` with list/add/get/delete tools. Needs Go 1.25+
+  (official `modelcontextprotocol/go-sdk`). stdout is the protocol; log to stderr only.
+- Later, only when asked: Terraform provider, skills, agents. Do not start these
   unprompted.
 
 ## Layout
@@ -27,7 +29,7 @@ code, lead with an analogy, build in small working pieces.
 ```
 cmd/stash-api/              HTTP service (main only: flags, wiring, graceful shutdown)
 cmd/stash/                  CLI (Cobra)
-cmd/stash-mcp/              MCP server (later)
+cmd/stash-mcp/              MCP server (stdio)
 internal/api/               HTTP handlers (net/http, Go 1.22+ method+path routing)
 internal/store/             Store interface + JSON-file implementation
 pkg/model/                  Shared types (Note, NoteInput) used by server and client
