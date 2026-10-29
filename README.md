@@ -8,18 +8,7 @@ Planned: MCP server, Terraform provider, Claude skills and agents.
 
 ## Setup
 
-Requires Go 1.22+.
-
-The module path is a placeholder, `github.com/YOUR-GITHUB-USER/stash`. Change it before
-pushing to GitHub:
-
-```sh
-OLD=github.com/YOUR-GITHUB-USER/stash
-NEW=github.com/<you>/stash
-go mod edit -module $NEW
-grep -rl "$OLD" --include='*.go' . | xargs sed -i '' "s#$OLD#$NEW#g"   # macOS sed; on Linux use: sed -i
-go build ./...
-```
+Requires Go 1.25+ (see `go.mod`). The module path is `github.com/myNameIsH4ppy/stash`.
 
 ## Run the API
 

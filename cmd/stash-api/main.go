@@ -12,8 +12,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/YOUR-GITHUB-USER/stash/internal/api"
-	"github.com/YOUR-GITHUB-USER/stash/internal/store"
+	"github.com/myNameIsH4ppy/stash/internal/api"
+	"github.com/myNameIsH4ppy/stash/internal/store"
 )
 
 func main() {

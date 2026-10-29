@@ -9,10 +9,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/YOUR-GITHUB-USER/stash/internal/api"
-	"github.com/YOUR-GITHUB-USER/stash/internal/store"
-	"github.com/YOUR-GITHUB-USER/stash/pkg/client"
-	"github.com/YOUR-GITHUB-USER/stash/pkg/model"
+	"github.com/myNameIsH4ppy/stash/internal/api"
+	"github.com/myNameIsH4ppy/stash/internal/store"
+	"github.com/myNameIsH4ppy/stash/pkg/client"
+	"github.com/myNameIsH4ppy/stash/pkg/model"
 )
 
 // newClient starts the real API handler on a throwaway local server, so these

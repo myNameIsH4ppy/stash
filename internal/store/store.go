@@ -4,7 +4,7 @@ package store
 import (
 	"errors"
 
-	"github.com/YOUR-GITHUB-USER/stash/pkg/model"
+	"github.com/myNameIsH4ppy/stash/pkg/model"
 )
 
 // ErrNotFound is returned when a note ID does not exist.

@@ -40,7 +40,7 @@ agents/                     agent definitions (later)
 `pkg/` (not `internal/`) for client and model so they can be imported if the provider is
 later split into its own repo. The server internals stay in `internal/`.
 
-Module path is a placeholder: `github.com/YOUR-GITHUB-USER/stash` (go.mod and every import).
+Module path: `github.com/myNameIsH4ppy/stash` (go.mod and every import).
 
 ## API
 

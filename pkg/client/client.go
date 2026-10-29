@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/YOUR-GITHUB-USER/stash/pkg/model"
+	"github.com/myNameIsH4ppy/stash/pkg/model"
 )
 
 // Client talks to a stash API server.

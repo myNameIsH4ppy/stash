@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/YOUR-GITHUB-USER/stash/pkg/model"
+	"github.com/myNameIsH4ppy/stash/pkg/model"
 )
 
 func TestFileStoreCRUD(t *testing.T) {

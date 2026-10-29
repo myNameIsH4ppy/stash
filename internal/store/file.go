@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/YOUR-GITHUB-USER/stash/pkg/model"
+	"github.com/myNameIsH4ppy/stash/pkg/model"
 )
 
 // FileStore keeps all notes in one JSON file. It re-reads the file on every

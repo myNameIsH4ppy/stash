@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/YOUR-GITHUB-USER/stash/internal/store"
-	"github.com/YOUR-GITHUB-USER/stash/pkg/model"
+	"github.com/myNameIsH4ppy/stash/internal/store"
+	"github.com/myNameIsH4ppy/stash/pkg/model"
 )
 
 func newTestHandler(t *testing.T) http.Handler {

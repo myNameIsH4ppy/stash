@@ -10,8 +10,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/YOUR-GITHUB-USER/stash/pkg/client"
-	"github.com/YOUR-GITHUB-USER/stash/pkg/model"
+	"github.com/myNameIsH4ppy/stash/pkg/client"
+	"github.com/myNameIsH4ppy/stash/pkg/model"
 )
 
 const defaultAPIURL = "http://localhost:8080"

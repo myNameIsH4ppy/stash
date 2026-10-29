@@ -8,8 +8,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/YOUR-GITHUB-USER/stash/internal/store"
-	"github.com/YOUR-GITHUB-USER/stash/pkg/model"
+	"github.com/myNameIsH4ppy/stash/internal/store"
+	"github.com/myNameIsH4ppy/stash/pkg/model"
 )
 
 const maxBodyBytes = 1 << 20 // 1 MiB is plenty for a bookmark
